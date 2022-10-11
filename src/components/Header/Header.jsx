@@ -1,8 +1,23 @@
-import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const Header = () => {
-  return <div>Header</div>;
+  return (
+    <header className={styles.header}>
+      <Link to='/'>
+        body<span>Changer</span>
+      </Link>
+
+      <ul>
+        <li>
+          <NavLink to='/login'>Login</NavLink>
+        </li>
+        <li>
+          <NavLink to='/register'>Register</NavLink>
+        </li>
+      </ul>
+    </header>
+  );
 };
 
 export default Header;
