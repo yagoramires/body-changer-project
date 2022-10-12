@@ -34,11 +34,46 @@ section {
   width: 90%;
   max-width: 600px;
 
+  background-color: #FBB034;
+  background-image: linear-gradient(315deg, #FBB034 0%, #FFDD00 74%);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   row-gap: 1rem;
+
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form h4 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.form input {
+  width: 100%;
+  border-radius: .25rem;
+  padding: .5rem;
+
+  outline: none;
+  border: none;
+}
+
+.form input[type=submit] {
+  background-color: #ff7e14;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  transition: all .3s;
+}
+
+.form input[type=submit]:hover {
+  background-color: #ff7300;
 }
 
 
@@ -48,6 +83,6 @@ section {
   }
 
   section {
-    min-height: calc(100vh - 6.25rem);
+    min-height: calc(100vh - 6.35rem);
   }
 }

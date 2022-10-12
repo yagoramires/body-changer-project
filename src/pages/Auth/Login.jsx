@@ -49,12 +49,14 @@ const Login = () => {
   return (
     <section>
       <form onSubmit={handleSubmit} className='form'>
+        <h4>Entre para monitorar sua dieta</h4>
         <input
           type='email'
           value={email || ''}
           onChange={(e) => {
             setEmail(e.target.value);
           }}
+          placeholder='E-mail'
         />
         <input
           type='password'
@@ -62,6 +64,7 @@ const Login = () => {
           onChange={(e) => {
             setPassword(e.target.value);
           }}
+          placeholder='Senha'
         />
         {loading ? (
           <AiOutlineLoading3Quarters />

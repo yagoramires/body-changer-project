@@ -54,6 +54,8 @@ const Register = () => {
   return (
     <section>
       <form onSubmit={handleSubmit} className='form'>
+        <h4>Cadastre-se e mude seu corpo!</h4>
+
         <input
           type='email'
           value={email || ''}
