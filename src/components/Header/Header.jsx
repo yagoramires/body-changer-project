@@ -8,7 +8,7 @@ const Header = () => {
         body<span>Changer</span>
       </Link>
 
-      <ul>
+      <ul className={styles.nav}>
         <li>
           <NavLink to='/login'>Login</NavLink>
         </li>

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Footer.module.css';
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return <footer className={styles.footer}>&copy; Yago Ramires</footer>;
 };
 
 export default Footer;

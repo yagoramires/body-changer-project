@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+// eslint-disable-next-line no-unused-vars
 import db from '../firebase/config';
 
 import {
@@ -34,7 +35,7 @@ const useAuth = () => {
         data.password,
       );
 
-      await user.sendEmailVerification();
+      await sendEmailVerification(user, actionCodeSettings);
 
       setLoading(false);
     } catch (e) {
@@ -126,3 +127,5 @@ const useAuth = () => {
     loading,
   };
 };
+
+export default useAuth;
