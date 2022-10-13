@@ -125,6 +125,7 @@ const useAuth = () => {
     error,
     message,
     loading,
+    auth,
   };
 };
 

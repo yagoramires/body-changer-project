@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import useAuth from '../../hooks/useAuth';
 
+import styles from './Auth.module.css';
+
 const Register = () => {
   // User data states
   const [email, setEmail] = useState();
@@ -52,7 +54,7 @@ const Register = () => {
   }, [error]);
 
   return (
-    <section>
+    <section className={styles.section}>
       <form onSubmit={handleSubmit} className='form'>
         <h4>Cadastre-se e mude seu corpo!</h4>
 

@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+
+import styles from './Auth.module.css';
 
 const Login = () => {
   // User data states
@@ -47,9 +50,9 @@ const Login = () => {
   }, [error]);
 
   return (
-    <section>
+    <section className={styles.section}>
       <form onSubmit={handleSubmit} className='form'>
-        <h4>Entre para monitorar sua dieta</h4>
+        <h4>Entre para mudar seu corpo</h4>
         <input
           type='email'
           value={email || ''}
@@ -67,12 +70,21 @@ const Login = () => {
           placeholder='Senha'
         />
         {loading ? (
-          <AiOutlineLoading3Quarters />
+          <AiOutlineLoading3Quarters className='loading' />
         ) : (
           <input type='submit' value='Entrar' />
         )}
 
         {error && <p className='error'>{error}</p>}
+
+        <div className='divider'></div>
+
+        <p>
+          Esqueceu sua senha? <Link>Recupere-a</Link>
+        </p>
+        <p>
+          Não possui uma conta? <Link to='/register'>Registre-se</Link>
+        </p>
       </form>
     </section>
   );

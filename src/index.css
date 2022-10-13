@@ -20,22 +20,26 @@ a {
 }
 
 .active {
-  border-bottom: 4px solid white;
+  color: #ED008C !important;
+  border-bottom: 4px solid #ED008C;
 }
 
 section {
-  min-height: calc(100vh - 7.44rem);
+  min-height: calc(100vh - 4.98rem);
+  /* min-height: calc(100vh - 7.44rem); */
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .form {
   width: 90%;
   max-width: 600px;
 
-  background-color: #FBB034;
-  background-image: linear-gradient(315deg, #FBB034 0%, #FFDD00 74%);
+  background-color: white;
+  /* background-color: #FBB034; */
+  /* background-image: linear-gradient(315deg, #FBB034 0%, #FFDD00 74%); */
   border-radius: 1rem;
   padding: 3rem 2rem;
 
@@ -49,7 +53,7 @@ section {
 }
 
 .form h4 {
-  color: #ffffff;
+  color: #ED008C;
   font-size: 1.2rem;
   text-align: center;
 }
@@ -61,28 +65,95 @@ section {
 
   outline: none;
   border: none;
+  background-color: #eeeeee;
 }
 
 .form input[type=submit] {
-  background-color: #ff7e14;
+  background-color: #ff8623;
+  /* background-color: #FFF000;
+  background-image: linear-gradient(315deg, #FFF000 0%, #ED008C 74%); */
   color: white;
   font-weight: 600;
   font-size: 1rem;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   transition: all .3s;
+  cursor: pointer;
 }
 
 .form input[type=submit]:hover {
   background-color: #ff7300;
 }
 
+.form p {
+  color: #ff8623;
+  font-weight: 500;
+}
+
+.form a {
+  color: #ED008C;
+  transition: all .3s;
+  font-weight: 600;
+}
+
+.form a:hover {
+  color: #b30068;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+
+  background-color: #ED008C;
+  background-image: linear-gradient(315deg, #FFF000 0%, #ED008C 74%);
+}
+
+.loading {
+  font-size: 1.5rem;
+  color: #ED008C;
+  animation: loading 1.5s linear infinite;
+}
+
+.error {
+  margin-top: 1rem;
+  color: #721c24 !important;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 8px;
+  border-radius: .25rem;
+  text-align: center;
+}
+
+.success {
+  margin-top: 1rem;
+  color: #24492c !important;
+  background-color: #99fcaf;
+  border: 1px solid #537c5c;
+  padding: 8px;
+  border-radius: .25rem;
+  text-align: center;
+}
+
 
 @media (max-width: 720px) {
   .active {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #ED008C;
   }
 
   section {
-    min-height: calc(100vh - 6.35rem);
+    min-height: calc(100vh - 4.2rem);
+  }
+
+  .form p {
+    font-size: .9rem;
+  }
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
