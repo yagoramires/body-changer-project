@@ -14,6 +14,9 @@ const Login = () => {
   // Error state
   const [error, setError] = useState();
 
+  // Modal state
+  const [active, setActive] = useState();
+
   const { login, error: loginError, loading } = useAuth();
 
   const handleSubmit = (e) => {
@@ -35,6 +38,15 @@ const Login = () => {
     };
 
     login(userData);
+  };
+
+  const handleResetPass = (e) => {
+    e.preventDefault();
+
+    if (email === '') {
+      setError('Preencha o e-mail.');
+      return;
+    }
   };
 
   useEffect(() => {
@@ -86,6 +98,13 @@ const Login = () => {
           Não possui uma conta? <Link to='/register'>Registre-se</Link>
         </p>
       </form>
+
+      <div className='modal'>
+        <form
+          onSubmit={handleResetPass}
+          className={`form ${active ? 'show' : ''}`}
+        ></form>
+      </div>
     </section>
   );
 };

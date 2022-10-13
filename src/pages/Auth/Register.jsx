@@ -64,6 +64,7 @@ const Register = () => {
           onChange={(e) => {
             setEmail(e.target.value);
           }}
+          placeholder='E-mail'
         />
         <input
           type='password'
@@ -71,6 +72,7 @@ const Register = () => {
           onChange={(e) => {
             setPassword(e.target.value);
           }}
+          placeholder='Senha'
         />
         <input
           type='password'
@@ -78,6 +80,7 @@ const Register = () => {
           onChange={(e) => {
             setConfirmPassword(e.target.value);
           }}
+          placeholder='Confirmação de senha'
         />
         {loading ? (
           <AiOutlineLoading3Quarters />
