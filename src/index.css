@@ -89,13 +89,19 @@ section {
   font-weight: 500;
 }
 
-.form a {
+.form a,
+.form p span {
+  cursor: pointer;
   color: #ED008C;
   transition: all .3s;
   font-weight: 600;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
 }
 
-.form a:hover {
+.form a:hover,
+.form p span:hover {
   color: #b30068;
 }
 
@@ -134,13 +140,24 @@ section {
 }
 
 .modal {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   min-height: calc(100vh - 4.98rem);
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.modal-close-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #ff8623;
+}
+
+.hide {
+  display: none;
 }
 
 
@@ -155,6 +172,10 @@ section {
 
   .form p {
     font-size: .9rem;
+  }
+
+  .modal {
+    min-height: calc(100vh - 4.2rem);
   }
 }
 
