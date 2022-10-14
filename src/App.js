@@ -13,6 +13,7 @@ import { useLayoutEffect, useState } from 'react';
 // Auth
 import useAuth from './hooks/useAuth';
 import { onAuthStateChanged } from 'firebase/auth';
+import Diary from './pages/Diary/Diary';
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -41,6 +42,7 @@ function App() {
           path='/register'
           element={!user ? <Register /> : <Navigate to='/' />}
         />
+        <Route path='/diary' element={user ? <Diary /> : <Navigate to='/' />} />
       </Routes>
     </div>
   );
