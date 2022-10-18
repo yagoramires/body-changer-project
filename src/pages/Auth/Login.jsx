@@ -93,6 +93,7 @@ const Login = () => {
             setEmail(e.target.value);
           }}
           placeholder='E-mail'
+          autoComplete='on'
         />
         <input
           type='password'
@@ -101,6 +102,7 @@ const Login = () => {
             setPassword(e.target.value);
           }}
           placeholder='Senha'
+          autoComplete='on'
         />
         {loading ? (
           <AiOutlineLoading3Quarters className='loading' />

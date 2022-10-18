@@ -65,6 +65,7 @@ const Register = () => {
             setEmail(e.target.value);
           }}
           placeholder='E-mail'
+          autoComplete='on'
         />
         <input
           type='password'
@@ -73,6 +74,7 @@ const Register = () => {
             setPassword(e.target.value);
           }}
           placeholder='Senha'
+          autoComplete='on'
         />
         <input
           type='password'
@@ -81,6 +83,7 @@ const Register = () => {
             setConfirmPassword(e.target.value);
           }}
           placeholder='Confirmação de senha'
+          autoComplete='on'
         />
         {loading ? (
           <AiOutlineLoading3Quarters />

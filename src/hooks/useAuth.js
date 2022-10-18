@@ -14,6 +14,8 @@ import {
   sendEmailVerification,
 } from 'firebase/auth';
 
+import { doc, setDoc, Timestamp } from 'firebase/firestore';
+
 const useAuth = () => {
   const [error, setError] = useState();
   const [message, setMessage] = useState();
@@ -35,7 +37,14 @@ const useAuth = () => {
         data.password,
       );
 
-      await sendEmailVerification(user, actionCodeSettings);
+      const dbUser = {
+        admin: false,
+        email: data.email,
+        createdAt: Timestamp.now(),
+      };
+
+      await setDoc(doc(db, 'users', user.uid), dbUser);
+      await user.sendEmailVerification();
 
       setLoading(false);
     } catch (e) {
