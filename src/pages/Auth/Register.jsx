@@ -86,7 +86,7 @@ const Register = () => {
           autoComplete='on'
         />
         {loading ? (
-          <AiOutlineLoading3Quarters />
+          <AiOutlineLoading3Quarters className='loading' />
         ) : (
           <input type='submit' value='Cadastrar' />
         )}

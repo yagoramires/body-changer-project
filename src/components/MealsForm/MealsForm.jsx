@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useFetchDocuments } from '../../hooks/useFetchDocuments';
 
 const MealsForm = () => {
-  const MealsTypes = [
+  const mealsTypes = [
     'Café da Manha',
     'Almoço',
     'Lanche',
@@ -12,15 +12,13 @@ const MealsForm = () => {
     'Pós Treino',
   ];
 
-  const [selecteUser, setSelecteUser] = useState();
+  const [selectedUser, setSelectedUser] = useState();
   const [mealType, setMealType] = useState();
   const [mealItem, setMealItem] = useState();
   const [mealItemWeight, setMealItemWeight] = useState();
   const [newMenu, setNewMenu] = useState([]);
 
   const { documents: users } = useFetchDocuments('users');
-  console.log(selecteUser);
-  console.log(mealType);
 
   const handleAddItem = (e) => {
     e.preventDefault();
@@ -36,14 +34,12 @@ const MealsForm = () => {
     setMealItemWeight();
   };
 
-  console.log(newMenu);
-
   return (
     <div>
       <select
         name='users'
         defaultValue='selected'
-        onChange={(e) => setSelecteUser(e.target.value)}
+        onChange={(e) => setSelectedUser(e.target.value)}
       >
         <option disabled value='selected'>
           Selecione
@@ -56,11 +52,21 @@ const MealsForm = () => {
           ))}
       </select>
 
-      {newMenu.map((meal, index) => (
-        <>
-          <p key={index}>{meal.type}</p>
-          {/* <div>{newMenu.filter((meal) => meal.type === meal.type)}</div> */}
-        </>
+      {mealsTypes.map((meal, index) => (
+        <div key={index}>
+          <h3>{meal}</h3>
+          <div>
+            {newMenu.map(
+              (item, index) =>
+                meal === item.type && (
+                  <div key={index}>
+                    <p>{item.item}</p>
+                    <p>{item.weight}</p>
+                  </div>
+                ),
+            )}
+          </div>
+        </div>
       ))}
 
       <form onSubmit={handleAddItem} className='form'>
@@ -72,7 +78,7 @@ const MealsForm = () => {
           <option disabled value='selected'>
             Selecione
           </option>
-          {MealsTypes.map((meal) => (
+          {mealsTypes.map((meal) => (
             <option value={meal} key={meal}>
               {meal}
             </option>

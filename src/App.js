@@ -15,8 +15,8 @@ import useAuth from './hooks/useAuth';
 import { onAuthStateChanged } from 'firebase/auth';
 import Diary from './pages/Diary/Diary';
 import { useFetchDocument } from './hooks/useFetchDocument';
-import { useFetchDocuments } from './hooks/useFetchDocuments';
 import Dashboard from './pages/Dashboard/Dashboard';
+import Loading from './components/Loading/Loading';
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -40,10 +40,10 @@ function App() {
   }, [userDoc]);
 
   if (user === undefined) {
-    return <p>Carregando...</p>;
+    return <Loading />;
   }
   if (admin === undefined) {
-    return <p>Carregando...</p>;
+    return <Loading />;
   }
 
   return (
